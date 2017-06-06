@@ -1,3 +1,3 @@
-App.Collections.Collection = Backbone.Collection.extend({
-	model: App.Models.Person
+App.Collections.Todos = Backbone.Collection.extend({
+	model: App.Models.Todo
 });

@@ -1,6 +1,7 @@
 'use strict';
-App.Collections.ViewCollection = Backbone.View.extend({
-	tagName: 'ul',
+App.Views.ViewCollection = Backbone.View.extend({
+	tagName: 'ol',
+	className: 'todoList',
 
 	// template: _.template('<ul> <%= personView.el %> </ul>'),
 
@@ -8,11 +9,14 @@ App.Collections.ViewCollection = Backbone.View.extend({
 		this.collection;	//не обязательно
 	},
 
+	addOne: function (todo) {
+		var todoView = new App.Views.Todo({ model: todo });
+
+		this.$el.append(todoView.render().el);
+	},
+
 	render: function () {
-		this.collection.each(function (person) {
-			var personView = new App.Views.View({ model: person });
-			this.$el.append(personView.render().el);
-		}, this);
+		this.collection.each(this.addOne, this);
 
 		return this;
 	}

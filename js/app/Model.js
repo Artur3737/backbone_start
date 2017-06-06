@@ -1,9 +1,9 @@
 'use strict';
-App.Models.Person = Backbone.Model.extend({
+App.Models.Todo = Backbone.Model.extend({
 	defaults: {
-		name: 'Stranger',
-		age: 25,
-		job: 'Developer'
+		task: 'Выучить Backbone',
+		priority: 3,
+		done: false
 	}
 
 // с валидацией что-то не срослось

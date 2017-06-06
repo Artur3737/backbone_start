@@ -1,13 +1,18 @@
 'use strict';
-App.Views.View = Backbone.View.extend({
+App.Views.Todo = Backbone.View.extend({
 	tagName: 'li',
-	className: 'view',
+	className: 'todo',
+	events: {'click span': 'event'},
 
-	template: _.template(' <%= name %> ( <%= age %> ) - <%= job %>'),
+	template: _.template('<span> <%= task %> <%= ( priority ) %> <%= ( done ) %> </span> <button> edit </button> <button> delete </button>'),
 
 	initialize: function () {
 		this.model; 		//не обязательно
 		// this.render();	render сдесь был но и без него работает
+	},
+
+	event: function () {
+		alert('hello' + this.model.get('task'))
 	},
 
 	render: function () {

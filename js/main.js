@@ -3,12 +3,15 @@
 	window.App = {
 		Models: {},
 		Views: {},
-		Collectoins: {},
-		Controllers: {}
+		Collections: {},
+		Controllers: {},
+		templates: {}
 	}
+
 	document.addEventListener('DOMContentLoaded', main, false);
 
 	function main () {
-		new App.Controllers.Controller(); 
+		App.Controllers.Controller();
 	}
+
 })();
