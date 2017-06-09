@@ -4,13 +4,13 @@ App.Models.Todo = Backbone.Model.extend({
 		task: 'Выучить Backbone',
 		priority: 3,
 		done: false
-	}
+	},
 
 // с валидацией что-то не срослось
-	// validate: function (attrs) {
-	// 	console.log(attrs);
-	// 	if (typeOf(attrs.name) !== 'string') {
-	// 		return console.log('Имя должно быть');
-	// 	}
-	// }
+	validate: function (attrs) {
+		console.log(attrs);
+		if (!$.trim(attrs.title)) {
+			return console.log('don`t pass validation');
+		}
+	}
 });
